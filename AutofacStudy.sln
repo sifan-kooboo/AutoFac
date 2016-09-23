@@ -11,6 +11,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ConsoleAppStudy", "ConsoleA
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AutoFacWinform", "AutoFacWinform\AutoFacWinform.csproj", "{ABF2433E-D2AC-4F39-B1F7-D3E25C474C1B}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AutoFacMVC", "AutoFacMVC\AutoFacMVC.csproj", "{6D6F619B-2D28-4493-B29B-3E2EC80E1B4D}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -33,6 +35,10 @@ Global
 		{ABF2433E-D2AC-4F39-B1F7-D3E25C474C1B}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{ABF2433E-D2AC-4F39-B1F7-D3E25C474C1B}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{ABF2433E-D2AC-4F39-B1F7-D3E25C474C1B}.Release|Any CPU.Build.0 = Release|Any CPU
+		{6D6F619B-2D28-4493-B29B-3E2EC80E1B4D}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{6D6F619B-2D28-4493-B29B-3E2EC80E1B4D}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{6D6F619B-2D28-4493-B29B-3E2EC80E1B4D}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{6D6F619B-2D28-4493-B29B-3E2EC80E1B4D}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
