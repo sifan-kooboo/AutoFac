@@ -1,12 +1,15 @@
 ﻿<!DOCTYPE html>
-<html>
+<html ng-app="GoBear">
 <head>
-<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>@ViewBag.Title - 我的 ASP.NET 应用程序</title>
     @Styles.Render("~/Content/css")
     @Scripts.Render("~/bundles/modernizr")
+    @Scripts.Render("~/bundles/jquery")
+    @Scripts.Render("~/bundles/jqueryval")
+    @Scripts.Render("~/bundles/angular")
 
 </head>
 <body>
@@ -30,7 +33,9 @@
             </div>
         </div>
     </div>
-    <div class="container body-content">
+    <div class="container body-content" ng-controller="MainCtr">
+        MainCtrInfo:{{info}}
+        TestCtrInfo:{{testInfo}}
         @RenderBody()
         <hr />
         <footer>

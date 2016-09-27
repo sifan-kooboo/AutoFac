@@ -1,4 +1,6 @@
-﻿using System;
+﻿using AutoFacMVC.IServices;
+using AutoFacMVC.Services;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Web;
@@ -8,8 +10,16 @@ namespace AutoFacMVC.Controllers
 {
     public class HomeController : Controller
     {
+        private ITestService _testServices;
+
+        public HomeController(ITestService testServices)
+        {
+            _testServices = testServices;
+        }
         public ActionResult Index()
         {
+            var Names=_testServices.GetNames();
+            ViewBag.info = Names;
             return View();
         }
 
