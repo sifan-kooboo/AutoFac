@@ -27,5 +27,15 @@ namespace WebApplication1
            var container = builder.Build();
            DependencyResolver.SetResolver(new AutofacDependencyResolver(container));
         }
+
+        protected void Application_BeginRequest(Object sender, EventArgs e)
+        {
+            string url = Request.Url.LocalPath.ToLower();
+            string[] ignorePaths = { "service", "management", "content/sitecss", "details", "clearcache" };
+            if (ignorePaths.All(c => !url.Contains(c)))
+            {
+                Context.RewritePath("/");
+            }
+        }
     }
 }

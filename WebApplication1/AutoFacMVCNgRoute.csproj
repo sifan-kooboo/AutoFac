@@ -986,9 +986,9 @@
     <Content Include="Scripts\respond.js" />
     <Content Include="Scripts\respond.min.js" />
     <Content Include="Scripts\_references.js" />
-    <Content Include="Templates\about.html" />
-    <Content Include="Templates\contact.html" />
-    <Content Include="Templates\Home.html" />
+    <Content Include="Templates\Views\about.html" />
+    <Content Include="Templates\Views\contact.html" />
+    <Content Include="Templates\Views\Home.html" />
     <Content Include="Web.config" />
     <Content Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
@@ -1021,6 +1021,7 @@
     <Folder Include="Scripts\Angular\Directive\" />
     <Folder Include="Scripts\Angular\Service\" />
     <Folder Include="Scripts\NewFolder1\" />
+    <Folder Include="Templates\Directive\" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="fonts\glyphicons-halflings-regular.woff" />
