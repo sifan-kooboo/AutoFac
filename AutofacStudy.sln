@@ -11,6 +11,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ConsoleAppStudy", "ConsoleA
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AutoFacWinform", "AutoFacWinform\AutoFacWinform.csproj", "{ABF2433E-D2AC-4F39-B1F7-D3E25C474C1B}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AutoFacMVCNgRoute", "WebApplication1\AutoFacMVCNgRoute.csproj", "{945466FA-CFC3-480C-A590-BD07333A39AB}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -33,6 +35,10 @@ Global
 		{ABF2433E-D2AC-4F39-B1F7-D3E25C474C1B}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{ABF2433E-D2AC-4F39-B1F7-D3E25C474C1B}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{ABF2433E-D2AC-4F39-B1F7-D3E25C474C1B}.Release|Any CPU.Build.0 = Release|Any CPU
+		{945466FA-CFC3-480C-A590-BD07333A39AB}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{945466FA-CFC3-480C-A590-BD07333A39AB}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{945466FA-CFC3-480C-A590-BD07333A39AB}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{945466FA-CFC3-480C-A590-BD07333A39AB}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
