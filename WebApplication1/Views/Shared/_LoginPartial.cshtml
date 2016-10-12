@@ -18,5 +18,7 @@ else
     <ul class="nav navbar-nav navbar-right">
         <li>@Html.ActionLink("注册", "Register", "Account", routeValues: null, htmlAttributes: new { id = "registerLink" })</li>
         <li>@Html.ActionLink("登录", "Login", "Account", routeValues: null, htmlAttributes: new { id = "loginLink" })</li>
+        <li><a ng-href="/account/register">angular注册</a></li>
+        <li><a ng-href="/account/Login">angular登录</a></li>
     </ul>
 }

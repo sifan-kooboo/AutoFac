@@ -1,0 +1,68 @@
+﻿
+
+
+<div ng-controller="productMaintenanceController as vm" ng-init="vm.initializeController()">
+
+    <h4 class="page-header">{{vm.title}}</h4>
+
+    <div class="box" style="width:100%">
+
+        <div class="box-content">
+      
+            <form class="form-horizontal" role="form">
+
+                <div class="form-group">
+                    <label class="col-sm-2 control-label required">Product Name</label>
+
+                    <div class="col-sm-4">
+                        <input type="text" class="form-control" ng-model="vm.productName" ng-class="{'validation-error': vm.productNameInputError}">
+                    </div>
+
+                </div>
+
+
+                <div class="form-group">
+
+
+                    <label class="col-sm-2 control-label">Quantity Per Unit</label>
+
+                    <div class="col-sm-4">
+                        <input type="text" class="form-control" ng-model="vm.quantityPerUnit">
+                    </div>
+
+                </div>
+
+
+                <div class="form-group">
+
+                    <label class="col-sm-2 control-label">Unit Price</label>
+
+                    <div class="col-sm-4">
+                        <input type="text" class="form-control" ng-model="vm.unitPrice">
+                    </div>
+                 
+
+                </div>
+                   
+
+            </form>
+
+
+        </div>
+    </div>
+
+
+    <button class="btn btn-primary btn-label-left" ng-click="vm.saveProduct()">
+        <span><i class="fa fa-clock-o"></i></span>
+        <b>Save</b>
+    </button>
+
+
+    <div style="padding-top:20px">
+        <alert ng-repeat="alert in vm.alerts" type="{{alert.type}}" close="vm.closeAlert($index)"><div ng-bind-html="vm.messageBox"></div></alert>
+    </div>
+
+
+
+</div>
+

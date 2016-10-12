@@ -14,9 +14,11 @@ MobHotel.config(['$routeProvider', '$locationProvider', function (routeProvider,
             templateUrl: 'Templates/Views/contact.html',
             controller: 'contactCtr'
         })
-        .when('/Account/Login',
-        {
-            redirectTo: '/about'
+        .when('/account/login', {
+            redirectTo: '/account/login'
+        })
+        .when('/account/register', {
+            redirectTo: '/account/register'
         })
         .otherwise({
             redirectTo: '/home'

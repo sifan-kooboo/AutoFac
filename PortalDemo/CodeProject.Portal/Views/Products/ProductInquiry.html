@@ -1,0 +1,39 @@
+﻿
+<div ng-controller="productInquiryController as vm" ng-init="vm.initializeController()">
+    <h4 class="page-header">{{vm.title}}</h4>
+
+    <table class="table table-striped table-hover" style="width: 100%; padding:4px">
+        <thead>
+
+            <tr>
+                <th colspan="2" style="width: 50%">
+                    <span ng-bind="vm.totalProducts"></span>&nbsp;Products
+                </th>
+                <th colspan="5" style="text-align: right; width: 50%">
+                    Page&nbsp;<span ng-bind="vm.currentPageNumber"></span>&nbsp;of&nbsp;
+                    <span ng-bind="vm.totalPages"></span>
+                </th>
+            </tr>
+
+            <tr>
+                <th ng:repeat="tableHeader in vm.tableHeaders" style="text-decoration:underline" ng:class="vm.setSortIndicator(tableHeader.label)" ng:click="vm.changeSorting(tableHeader.label)">{{tableHeader.label}}</th>              
+            </tr>
+
+        </thead>
+        <tbody>
+            <tr ng-repeat="product in vm.products">
+                <td style="width: 20%; white-space: nowrap"><a ng-href="Products/ProductMaintenance/{{product.productID}}" style="cursor:pointer; text-decoration:underline; color:black">{{product.productID}}</a></td>
+                <td style="width: 30%; white-space: nowrap"><div ng-bind="product.productName"></div></td>
+                <td style="width: 30%; white-space: nowrap"><div ng-bind="product.quantityPerUnit"></div></td>
+                <td style="width: 20%; white-space: nowrap"><div>{{product.unitPrice | currency}}</div></td>
+               
+            </tr>
+        </tbody>
+    </table>
+
+    <pagination boundary-links="true" total-items="vm.totalProducts" items-per-page="vm.pageSize" ng-change="vm.pageChanged()"
+                ng-model="vm.currentPageNumber" class="pagination-lg" previous-text="Prev" next-text="Next" first-text="First" last-text="Last"></pagination>
+
+
+</div>
+

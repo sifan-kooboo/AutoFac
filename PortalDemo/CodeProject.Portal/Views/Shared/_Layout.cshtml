@@ -1,0 +1,155 @@
+﻿@using CodeProject.Portal.Models
+@{
+
+    var version = typeof(CodeProject.Portal.MvcApplication).Assembly.GetName().Version.ToString();
+    string baseUrl = System.Configuration.ConfigurationManager.AppSettings["BaseUrl"].ToString();
+
+    List<CustomBundle> bundles = new List<CustomBundle>();
+
+    CodeProject.Portal.Models.CustomBundle customBundle;
+
+    List<string> codeProjectBundles = new List<string>();
+    codeProjectBundles.Add("home");
+    codeProjectBundles.Add("customers");
+    codeProjectBundles.Add("products");
+
+    foreach (string controller in codeProjectBundles)
+    {
+        customBundle = new CodeProject.Portal.Models.CustomBundle();
+        customBundle.BundleName = controller;
+        customBundle.Path = BundleTable.Bundles.ResolveBundleUrl("~/bundles/" + controller);
+        customBundle.IsLoaded = false;
+        bundles.Add(customBundle);
+    }
+
+    BundleInformation bundleInformation = new BundleInformation();
+    bundleInformation.Bundles = bundles;
+    string bundleInformationJSON = Newtonsoft.Json.JsonConvert.SerializeObject(bundleInformation, Newtonsoft.Json.Formatting.None);
+
+}
+
+<!DOCTYPE html>
+<html>
+<head>
+
+    <meta charset="utf-8" />  
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate" />
+    <meta http-equiv="Pragma" content="no-cache" />
+    <meta http-equiv="Expires" content="0" />
+
+    <title>AngularJS MVC Code Project</title>
+
+    <script src="~/Scripts/require.js"></script>
+
+    @Scripts.Render("~/bundles/jquery")
+    @Scripts.Render("~/bundles/bootstrap")
+
+    @Styles.Render("~/Content/css")
+    @Scripts.Render("~/bundles/modernizr")
+
+    
+   
+    @Scripts.Render("~/bundles/angular")
+
+ 
+
+    <base href="@baseUrl" />
+
+</head>
+<body ng-app="codeProject" ng-controller="masterController as vm" ng-init="vm.initializeController()">
+    <div class="navbar navbar-inverse navbar-fixed-top">
+        <div class="container">
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+                <span class="navbar-brand"><a href="Home/Index">AngularJS MVC Code Project</a></span>
+            </div>
+            <div class="navbar-collapse collapse">
+                <ul class="nav navbar-nav">
+
+                    <li><a href="Home/Index">Home</a></li>
+                    <li><a href="Home/Contact">Contact Us</a></li>
+                    <li><a href="Home/About">About</a></li>
+                    <li><a href="Customers/CustomerMaintenance">Customer Maintenance</a></li>
+                    <li><a href="Customers/CustomerInquiry">Customer Inquiry</a></li>
+                    <li><a href="Products/ProductMaintenance">Product Maintenance</a></li>
+                    <li><a href="Products/ProductInquiry">Product Inquiry</a></li>                  
+                </ul>
+            </div>
+        </div>
+    </div>
+
+    <div class="container body-content">
+
+        @RenderBody()
+        <hr />
+        <footer>
+            <p>&copy; @DateTime.Now.Year - AngularJS MVC @version</p>          
+        </footer>
+    </div>
+
+
+    @if (HttpContext.Current.IsDebuggingEnabled)
+    {
+        @Scripts.RenderFormat("<script type=\"text/javascript\" src=\"{0}?ver=" + @version + "\"></script>", "~/bundles/shared")
+    }
+    else
+    {
+        @Scripts.Render("~/bundles/shared")
+    }
+    <script>
+
+        (function () {
+
+            var codeProjectApplication = angular.module('codeProject');
+            codeProjectApplication.provider('applicationConfiguration', function () {
+                var _version;
+                var _bundles;
+                return {
+                    setVersion: function (version) {
+                        _version = version;
+                    },
+                    setBundles: function (bundles) {
+                        _bundles = bundles;
+                    },
+                    getVersion: function () {
+                        return _version;
+                    },
+                    getBundles: function () {
+                        return _bundles;
+                    },
+                    $get: function () {
+                        return {
+                            version: _version,
+                            bundles: _bundles
+                        }
+                    }
+                }
+            });
+
+            codeProjectApplication.config(function (applicationConfigurationProvider) {
+                applicationConfigurationProvider.setVersion('@version');
+                applicationConfigurationProvider.setBundles('@Html.Raw(bundleInformationJSON)');
+            });       
+
+        })();
+
+    </script>
+
+    @if (HttpContext.Current.IsDebuggingEnabled)
+    {
+        @Scripts.RenderFormat("<script type=\"text/javascript\" src=\"{0}?ver=" + @version + "\"></script>", "~/bundles/routing-debug")
+    }
+    else
+    {
+        @Scripts.Render("~/bundles/routing-production")
+    }
+
+    @RenderSection("scripts", required: false)
+
+</body>
+</html>

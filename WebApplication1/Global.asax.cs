@@ -31,11 +31,12 @@ namespace WebApplication1
         protected void Application_BeginRequest(Object sender, EventArgs e)
         {
             string url = Request.Url.LocalPath.ToLower();
-            string[] ignorePaths = { "service", "management", "content/sitecss", "details", "clearcache" };
+            string[] ignorePaths = { "service", "account", "management", "content/sitecss", "details", "clearcache" };
             if (ignorePaths.All(c => !url.Contains(c)))
             {
                 Context.RewritePath("/");
             }
+
         }
     }
 }
