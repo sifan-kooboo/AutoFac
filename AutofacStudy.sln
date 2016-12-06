@@ -31,6 +31,10 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "AutoFac", "AutoFac", "{4A03
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Parallel", "Parallel", "{C27D3F9A-9159-4F18-93E6-FC8ED119EA58}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AutoFacIntegrateParallel", "AutoFacIntegrateParallel\AutoFacIntegrateParallel.csproj", "{A8288F1A-1B2F-4761-8E5E-EE85BCFB0352}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AutoFacIntegrateParallel.Tests", "AutoFacIntegrateParallel.Tests\AutoFacIntegrateParallel.Tests.csproj", "{29367720-CCE2-4C8B-843D-BE2B072A1D59}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -151,6 +155,26 @@ Global
 		{00AA57FD-B326-4022-9BA6-0732B0B3762F}.Release|Mixed Platforms.ActiveCfg = Release|Any CPU
 		{00AA57FD-B326-4022-9BA6-0732B0B3762F}.Release|Mixed Platforms.Build.0 = Release|Any CPU
 		{00AA57FD-B326-4022-9BA6-0732B0B3762F}.Release|Win32.ActiveCfg = Release|Any CPU
+		{A8288F1A-1B2F-4761-8E5E-EE85BCFB0352}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{A8288F1A-1B2F-4761-8E5E-EE85BCFB0352}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{A8288F1A-1B2F-4761-8E5E-EE85BCFB0352}.Debug|Mixed Platforms.ActiveCfg = Debug|Any CPU
+		{A8288F1A-1B2F-4761-8E5E-EE85BCFB0352}.Debug|Mixed Platforms.Build.0 = Debug|Any CPU
+		{A8288F1A-1B2F-4761-8E5E-EE85BCFB0352}.Debug|Win32.ActiveCfg = Debug|Any CPU
+		{A8288F1A-1B2F-4761-8E5E-EE85BCFB0352}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{A8288F1A-1B2F-4761-8E5E-EE85BCFB0352}.Release|Any CPU.Build.0 = Release|Any CPU
+		{A8288F1A-1B2F-4761-8E5E-EE85BCFB0352}.Release|Mixed Platforms.ActiveCfg = Release|Any CPU
+		{A8288F1A-1B2F-4761-8E5E-EE85BCFB0352}.Release|Mixed Platforms.Build.0 = Release|Any CPU
+		{A8288F1A-1B2F-4761-8E5E-EE85BCFB0352}.Release|Win32.ActiveCfg = Release|Any CPU
+		{29367720-CCE2-4C8B-843D-BE2B072A1D59}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{29367720-CCE2-4C8B-843D-BE2B072A1D59}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{29367720-CCE2-4C8B-843D-BE2B072A1D59}.Debug|Mixed Platforms.ActiveCfg = Debug|Any CPU
+		{29367720-CCE2-4C8B-843D-BE2B072A1D59}.Debug|Mixed Platforms.Build.0 = Debug|Any CPU
+		{29367720-CCE2-4C8B-843D-BE2B072A1D59}.Debug|Win32.ActiveCfg = Debug|Any CPU
+		{29367720-CCE2-4C8B-843D-BE2B072A1D59}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{29367720-CCE2-4C8B-843D-BE2B072A1D59}.Release|Any CPU.Build.0 = Release|Any CPU
+		{29367720-CCE2-4C8B-843D-BE2B072A1D59}.Release|Mixed Platforms.ActiveCfg = Release|Any CPU
+		{29367720-CCE2-4C8B-843D-BE2B072A1D59}.Release|Mixed Platforms.Build.0 = Release|Any CPU
+		{29367720-CCE2-4C8B-843D-BE2B072A1D59}.Release|Win32.ActiveCfg = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -167,5 +191,7 @@ Global
 		{7FC08037-8E74-4524-BF70-10EEC84FA15F} = {F12945CB-8F80-4D28-8463-B9718CFDBB53}
 		{257F02CC-6DC4-4D11-9E32-53B5FE8DD1C9} = {F12945CB-8F80-4D28-8463-B9718CFDBB53}
 		{00AA57FD-B326-4022-9BA6-0732B0B3762F} = {F12945CB-8F80-4D28-8463-B9718CFDBB53}
+		{A8288F1A-1B2F-4761-8E5E-EE85BCFB0352} = {C27D3F9A-9159-4F18-93E6-FC8ED119EA58}
+		{29367720-CCE2-4C8B-843D-BE2B072A1D59} = {C27D3F9A-9159-4F18-93E6-FC8ED119EA58}
 	EndGlobalSection
 EndGlobal
