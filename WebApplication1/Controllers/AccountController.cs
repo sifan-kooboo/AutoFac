@@ -49,6 +49,8 @@ namespace WebApplication1.Controllers
                 if (user != null)
                 {
                     await SignInAsync(user, model.RememberMe);
+                    string str = "34,43,23,56";
+                    int[] arrInt = Array.ConvertAll<string, int>(str.Split(','), s => int.Parse(s));
                     return RedirectToLocal(returnUrl);
                 }
                 else

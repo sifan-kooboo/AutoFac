@@ -33,9 +33,18 @@
             </div>
         </div>
     </div>
-    <div class="container body-content" ng-controller="MainCtr">
-        MainCtrInfo:{{info}}
-        TestCtrInfo:{{testInfo}}
+    <div class="container body-content" ng-controller="RootCtr">
+        RootCtr:{{info}}
+        <div ng-controller="MainCtr">
+            MainCtrInfo:{{info}}
+            <input type="text" name="name" value=" " ng-model="ctrMsg" />
+        </div>
+        <div ng-controller="TestCtr">
+            TestCtrInfo:{{info}}
+
+            <input type="text" ng-model="name" name="name" value=" " ng-change="change(name)" />
+        </div>
+        <div ng-controller="sharedModuleCtrl">sharedModuleCtrl:{{info}}</div>
         @RenderBody()
         <hr />
         <footer>

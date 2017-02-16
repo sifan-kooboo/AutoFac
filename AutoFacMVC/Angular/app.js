@@ -1,3 +1,8 @@
 ﻿var sharedModuleName = "GoBear";
 
-var sharedModule = angular.module(sharedModuleName, []);
+angular.module(sharedModuleName, []);
+
+angular.module(sharedModuleName)
+.controller('sharedModuleCtrl', function ($scope) {
+    $scope.info = 'sharedModuleCtrl';
+})
